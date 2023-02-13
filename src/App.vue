@@ -1,17 +1,25 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <NavBarView/>
+    <transition name="fade">
+      <router-view/>
+    </transition>
+
+    <FooterView/>
+  </div>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+import NavBarView from "@/views/NavBarView.vue";
+import FooterView from "@/views/FooterView.vue";
+  export default {
+    name: 'App',
+    components: {
+      NavBarView,
+      FooterView
+    }
   }
-}
 </script>
 
 <style>
@@ -21,6 +29,20 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+body {
+  background-color: #1e212f;
+}
+
+.fade-enter-active {
+  transition: all 0.2s ease;
+}
+.fade-leave-active {
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.fade-enter, .fade-leave-to
+  /* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
 }
 </style>
