@@ -1,20 +1,20 @@
 <template>
   <div>
     <h1>Comparateur</h1>
-    <div class="contain">
-      <div class="tire">
+    <div className="contain">
+      <div className="tire">
         <h1>{{ Jeu1.titre }}</h1>
         <h1>{{ Jeu2.titre }}</h1>
       </div>
-      <div class="images">
-        <img class="image" :src="Jeu1.img" />
-        <img class="image" :src="Jeu2.img" />
+      <div className="images">
+        <img className="image" :src="Jeu1.img"/>
+        <img className="image" :src="Jeu2.img"/>
       </div>
-      <div class="tags">
-        <p class="tag">#{{ Jeu1.tag }}</p>
-        <p class="tag">#{{ Jeu2.tag }}</p>
+      <div className="tags">
+        <p className="tag">#{{ Jeu1.tag }}</p>
+        <p className="tag">#{{ Jeu2.tag }}</p>
       </div>
-      <div class="descriptions">
+      <div className="descriptions">
         <p>{{ Jeu1.description }}</p>
         <p>{{ Jeu2.description }}</p>
       </div>
@@ -48,6 +48,7 @@ export default {
   padding: 20px;
   column-rule: 2px solid #0f0f27;
 }
+
 .tire,
 .images,
 .tags,
