@@ -60,6 +60,10 @@ export default {
 .background {
   color: white;
   background-image: url("https://cdn.akamai.steamstatic.com/steam/apps/1057090/page_bg_generated_v6b.jpg?t=1667504225");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgb(29, 32, 456, 0.2);
+  backdrop-filter: blur(150px);
   height: 80vh;
 }
 

@@ -6,7 +6,8 @@
           type="checkbox"
           :id="id"
           :value="id"
-          v-model="checkedProducts"
+          v-on:click="affiche"
+          :disabled="!canBeSelected"
       />
       <label for="buttonCheck"></label>
     </div>
@@ -17,8 +18,11 @@
     >
       <div class="gauche">
         <h1>{{ titre }}</h1>
-        <p class="tag">#{{ tag }}</p>
-        <p>{{ description }}</p>
+        <p class="tag">{{ prix }}€</p>
+        <div class="description">
+          <p class="descriptionCute">{{ description }}</p>
+          <p class="troisPoints">...</p>
+        </div>
       </div>
       <div class="droite">
         <img class="image" :src="img" />
@@ -28,26 +32,29 @@
 </template>
 
 <script>
-import ProductView from "./ProductView";
-
 export default {
   name: "Card",
   props: {
     id: String,
     titre: String,
     tag: String,
+    prix: Number,
     description: String,
     img: String,
+    canBeSelected: Boolean,
   },
-  data() {
-    return {
-      checkedProducts: [],
-    };
+
+  methods: {
+    affiche: function (event) {
+      // `this` inside methods point to the Vue instance
+      this.$emit("selected", this.id);
+    },
   },
 };
 </script>
 
 <style scoped>
+/*
 input[type="checkbox"] {
   -moz-appearance: none;
   -ms-appearance: none;
@@ -80,6 +87,27 @@ input[type="checkbox"]:hover {
   height: 25px;
   width: 25px;
 }
+*/
+
+.description {
+  width: 90%;
+  text-align: center;
+  padding: 1px;
+}
+
+.description .descriptionCute {
+  --max-lines: 2;
+  position: relative;
+  max-height: 39px;
+  overflow: hidden;
+  padding-right: 1rem; /* space for ellipsis */
+  margin-bottom: 0;
+}
+
+.troisPoints {
+  margin: 0;
+}
+
 /*
 input[type="checkbox"]:before {
   font-family: FontAwesome;

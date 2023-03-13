@@ -20,6 +20,8 @@ export default {
         {
           id: "1",
           titre: "Hollow Knight",
+          prix: 10,
+          note: 12,
           tag: "combat",
           description:
               "Choisissez votre destin dans Hollow Knight ! Une aventure épique et pleine d’action, qui vous plongera dans un vaste royaume en ruine peuplé d’insectes et de héros. Dans un monde en 2D classique, dessiné à la main. ",
@@ -32,6 +34,8 @@ export default {
         {
           id: "2",
           titre: "Ori and the Will of the Wisps",
+          prix: 10,
+          note: 12,
           tag: "combat",
           description:
               "Embarquez pour une nouvelle aventure dans un monde vaste et dépaysant où vous rencontrerez des ennemis gigantesques et des énigmes ardues dans votre quête pour révéler la destinée d'Ori. ",
@@ -44,6 +48,8 @@ export default {
         {
           id: "3",
           titre: "Marvel’s Spider-Man Remastered",
+          prix: 10,
+          note: 12,
           tag: "combat",
           description:
               "Dans Marvel’s Spider-Man Remastered, les mondes de Peter Parker et de Spider-Man entrent en collision dans une histoire originale et riche en action. Incarnez un Peter Parker aguerri combattant le crime contre des ennemis emblématiques dans le New York de Marvel. ",
@@ -56,6 +62,8 @@ export default {
         {
           id: "4",
           titre: "Gotham Knights",
+          prix: 10,
+          note: 12,
           tag: "combat",
           description:
               "Il appartient maintenant à la Batman Family (Batgirl, Nightwing, Red Hood et Robin) de défendre Gotham City. ",
@@ -68,6 +76,8 @@ export default {
         {
           id: "5",
           titre: "Hogwarts Legacy : L'Héritage de Poudlard",
+          prix: 10,
+          note: 12,
           tag: "combat",
           description:
               "Hogwarts Legacy : L'Héritage de Poudlard est un RPG d'action-aventure immersif en monde ouvert. Vous pouvez prendre le contrôle et vous retrouver au centre de votre propre aventure dans le Monde des sorciers. ",
@@ -80,6 +90,8 @@ export default {
         {
           id: "6",
           titre: "The Witcher® 3: Wild Hunt",
+          prix: 10,
+          note: 12,
           tag: "combat",
           description:
               " Vous incarnez Geralt de Riv, un tueur de monstres. Devant vous s'étend un continent en guerre, infesté de monstres, à explorer à votre guise. Votre contrat actuel ? Retrouver Ciri, l'enfant de la prophétie, une arme vivante capable de changer le monde. ",
@@ -100,7 +112,7 @@ export default {
   color: white;
   background-color: #363d5d;
   padding: 10px;
-  margin: 15px 20px;
+  margin: 0 auto 15px;
   min-width: 1000px;
   max-width: 1500px;
 }
