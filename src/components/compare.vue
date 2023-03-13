@@ -1,20 +1,28 @@
 <template>
   <div>
+    <router-link :to="{ name: 'ProductsView' }">
+      <button class="buttonRetour">
+        <img
+            class="ImageButtonRetour"
+            src="https://cdn-icons-png.flaticon.com/512/61/61449.png"
+        />
+      </button>
+    </router-link>
     <h1>Comparateur</h1>
-    <div className="contain">
-      <div className="tire">
+    <div class="contain">
+      <div class="tire">
         <h1>{{ Jeu1.titre }}</h1>
         <h1>{{ Jeu2.titre }}</h1>
       </div>
-      <div className="images">
-        <img className="image" :src="Jeu1.img"/>
-        <img className="image" :src="Jeu2.img"/>
+      <div class="images">
+        <img class="image" :src="Jeu1.img" />
+        <img class="image" :src="Jeu2.img" />
       </div>
-      <div className="tags">
-        <p className="tag">#{{ Jeu1.tag }}</p>
-        <p className="tag">#{{ Jeu2.tag }}</p>
+      <div class="tags">
+        <p class="tag">#{{ Jeu1.tag }}</p>
+        <p class="tag">#{{ Jeu2.tag }}</p>
       </div>
-      <div className="descriptions">
+      <div class="descriptions">
         <p>{{ Jeu1.description }}</p>
         <p>{{ Jeu2.description }}</p>
       </div>
@@ -48,7 +56,6 @@ export default {
   padding: 20px;
   column-rule: 2px solid #0f0f27;
 }
-
 .tire,
 .images,
 .tags,
@@ -68,5 +75,23 @@ p {
 
 .titre {
   margin-top: 20px;
+}
+
+.buttonRetour {
+  height: 50px;
+  width: 50px;
+  background-color: #2534;
+  float: left;
+  border-radius: 10% 50% 50% 50%;
+  border: #2534 1px solid;
+  margin: 2px;
+}
+
+.balise1 {
+  column-count: 2;
+}
+.ImageButtonRetour {
+  width: 30px;
+  height: 30px;
 }
 </style>

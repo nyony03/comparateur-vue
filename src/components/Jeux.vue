@@ -21,7 +21,7 @@
         :prix="item.prix"
         :description="item.description"
         :img="item.img"
-        :canBeSelected="canBeSelected"
+        :canBeSelected="!hasTwoSelectedGame || Jeu.includes(item.id)"
         @selected="selectId"
     >
     </Card>
@@ -56,42 +56,21 @@ export default {
   data() {
     return {
       Jeu: [],
-      canBeSelected: true,
     };
+  },
+  computed: {
+    hasTwoSelectedGame() {
+      return this.Jeu.length >= 2;
+    },
   },
   methods: {
     selectId: function (JeuID) {
-      console.log(this.Jeu);
-      if (this.Jeu.length < 3) {
-
-        //indexof
-        console.log("this.Jeu[0] === JeuID : ", this.Jeu[0] === JeuID);
-        if (this.Jeu[0] === JeuID) {
-          console.log("coucou1");
-          this.Jeu.splice(0);
-        }
-        if (this.Jeu[1] === JeuID) {
-          console.log("coucou2");
-          this.Jeu.splice(1);
-        } else {
-          this.Jeu.push(JeuID);
-          this.canBeSelected = true;
-        }
-      } else {
-        this.canBeSelected = false;
+      if (this.Jeu.includes(JeuID)) {
+        const gameIndex = this.Jeu.indexOf(JeuID);
+        this.Jeu.splice(gameIndex, 1);
+        return;
       }
-
-      /*
-        if (this.Jeu1 === null) {
-          this.Jeu1 = JeuID;
-        } else if (this.Jeu2 === null) {
-          this.Jeu2 = JeuID;
-        } else if (JeuID === this.Jeu1) {
-          this.Jeu1 = null;
-        } else if (JeuID === this.Jeu2) {
-          this.Jeu2 = null;
-        }
-        */
+      this.Jeu.push(JeuID);
     },
 
     blockCheckBox: function (o) {
