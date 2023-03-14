@@ -1,21 +1,25 @@
 <template>
   <div class="search-form">
-    <input type="text" v-model="searchQuery" @input="search" placeholder="Rechercher..." />
+    <div class="search-input-container">
+      <input type="text" v-model="searchQuery" @input="search" placeholder="Rechercher..." />
+      <div class="search-result" v-if="results.length > 0">
+        <router-link
+            class="router-link"
+            v-for="result in results"
+            v-bind:key="result._id"
+            v-bind:to="{ name: 'GameView', params: { id: result._id } }"
+        >
+          {{ result.name }}
+        </router-link>
+      </div>
+      <div class="search-no-result">
+        <p v-show="searchQuery && results.length === 0">Aucun résultat trouvé</p>
+      </div>
+    </div>
     <button type="submit" @click="$emit('search', searchQuery)">
       Rechercher
     </button>
   </div>
-  <div v-if="results.length > 0">
-    <router-link
-        class="router-link"
-        v-for="result in results"
-        v-bind:key="result._id"
-        v-bind:to="{ name: 'GameView', params: { id: result._id } }"
-    >
-      {{ result.name }}
-    </router-link>
-  </div>
-  <p v-else>Aucun résultat trouvé</p>
 </template>
 
 <script>
@@ -44,7 +48,6 @@ export default {
             }
           })
           : [];
-      console.log(this.results)
     }
   },
   async mounted() {
@@ -65,13 +68,21 @@ export default {
   align-items: center;
 }
 
+.search-result{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom:0;
+  transform: translateY(100%);
+}
+
 .search-form input[type="text"] {
   background-color: #fff;
   border: none;
   border-radius: 5px;
   color: #333;
   padding: 0.5rem;
-  width: 50%;
+  width: 100%;
   font-size: 1.2rem;
   outline: none;
 }
@@ -95,11 +106,14 @@ export default {
   color: white;
 }
 
-.results {
-  margin-top: 1rem;
+.search-input-container{
+  position: relative;
+  width: 50%;
+  margin-right: 0.5rem;
 }
 
-.no-results {
-  margin-top: 1rem;
+.search-no-result{
+  position: relative;
+  width: 100%;
 }
 </style>

@@ -7,7 +7,7 @@
      />
       <router-link class="li" to="/">Home</router-link> |
       <router-link class="li" to="/about">Comparer des jeux</router-link> |
-      <router-link class="li" to="/about">Se connecter</router-link> |
+      <router-link class="li" to="/auth">Se connecter</router-link> |
       <router-link class="li" to="/about">S'inscrire</router-link>
       <SearchBar/>
     </div>

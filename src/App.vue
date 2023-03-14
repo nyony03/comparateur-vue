@@ -4,7 +4,7 @@
     <transition name="fade">
       <router-view/>
     </transition>
-
+    {{ count }}
     <FooterView/>
   </div>
 
@@ -13,11 +13,17 @@
 <script>
 import NavBarView from "@/views/NavBarView.vue";
 import FooterView from "@/views/FooterView.vue";
+
   export default {
     name: 'App',
     components: {
       NavBarView,
       FooterView
+    },
+    computed:{
+      count(){
+        return this.$store.state.count
+      }
     }
   }
 </script>
@@ -31,7 +37,9 @@ import FooterView from "@/views/FooterView.vue";
   color: #2c3e50;
 }
 body {
-  background-color: #1e212f;
+  /*background-color: #1e212f;*/
+  background-image: url("assets/composition-abstraite-lumiere-ultraviolette-uv.jpg");
+
 }
 
 .fade-enter-active {

@@ -34,14 +34,28 @@ export default {
 .Card {
   column-count: 2;
   color: white;
-  background-color: #000000;
+  /*background-color: #000000;*/
   padding: 20px 10px;
   min-width: 1000px;
   max-width: 1500px;
-  margin: 0 auto 20px;
+  margin: 0 auto 60px;
   justify-content: center;
   border-radius: 15px;
+  border: none;
+  box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #0af;
+  animation: neon-border 1.5s ease-in-out infinite alternate;
+  background: transparent;
 }
+
+@keyframes neon-border {
+  from {
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #0af;
+  }
+  to {
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 25px #0af;
+  }
+}
+
 .Card:hover {
   background-color: #363d5d;
   transform: scale3d(1.05,1.05,1);

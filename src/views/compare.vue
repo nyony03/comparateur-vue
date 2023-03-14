@@ -53,7 +53,7 @@ export default {
 .tags,
 .descriptions {
   column-count: 2;
-  background-color: #424861, #0f0f27;
+  background-color: #424861;
   color: white;
   /*border: 2px solid #1e212f;*/
   column-rule: 2px solid #0f0f27;

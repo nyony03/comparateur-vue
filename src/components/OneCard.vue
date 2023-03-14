@@ -5,6 +5,8 @@
       <p class="subtitle"> {{ jeu.description }} </p>
       <b class="subtitle-type"> Type : {{jeu.type}} </b>
       <b class="subtitle-platform"> Plateforme : {{jeu.platform}}</b>
+      <b class="subtitle-date"> Date de sortie : {{dateFormat}}</b>
+      <p>Sortie depuis {{ timeSince }} {{ timeUnit }} </p>
     </div>
   </div>
 </template>
@@ -15,13 +17,38 @@ export default {
   props: {
     jeu: []
   },
+  data() {
+    return {
+      timeSince: null,
+      timeUnit: null
+    };
+  },
+  computed: {
+    dateFormat(){
+      const date = new Date(this.jeu.date)
+      return date.toLocaleDateString('fr', {year:"numeric", month:"long", day:"numeric"})
+    }
+  },
   mounted() {
-    console.log(this.jeu)
+    this.calculateTimeSince();
+  },
+  methods: {
+    calculateTimeSince() {
+      const today = new Date();
+      const dateTime = new Date(this.jeu.date);
+      const diffInMonths = (today.getFullYear() - dateTime.getFullYear()) * 12 + (today.getMonth() - dateTime.getMonth());
+      const diffInYears = Math.floor(diffInMonths / 12);
+      if (diffInYears === 0) {
+        this.timeSince = diffInMonths;
+        this.timeUnit = "mois";
+      } else {
+        this.timeSince = diffInYears;
+        this.timeUnit = "années";
+      }
+    }
   }
-
-}
+};
 </script>
-
 <style scoped>
 .card {
   height: 40rem;
@@ -76,5 +103,11 @@ export default {
 .subtitle-platform {
   color: #b0215e;
   text-align: center;
+}
+
+.subtitle-date {
+  color: #b0215e;
+  text-align: center;
+  margin-top: 1rem;
 }
 </style>
