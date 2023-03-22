@@ -4,7 +4,7 @@
     <transition name="fade">
       <router-view/>
     </transition>
-    {{ count }}
+<!--    {{ count }}-->
     <FooterView/>
   </div>
 
@@ -13,17 +13,14 @@
 <script>
 import NavBarView from "@/views/NavBarView.vue";
 import FooterView from "@/views/FooterView.vue";
+import store from './main.js';
 
   export default {
     name: 'App',
+    store,
     components: {
       NavBarView,
       FooterView
-    },
-    computed:{
-      count(){
-        return this.$store.state.count
-      }
     }
   }
 </script>

@@ -1,23 +1,40 @@
-import { createApp } from 'vue'
+import {createApp} from 'vue'
 import App from './App.vue'
 import router from './router'
-import { createStore } from 'vuex'
+import {createStore} from 'vuex'
 
 // Create a new store instance.
 const store = createStore({
-    state () {
-        return {
-            count: 0
-        }
+    state: {
+        // état initial de l'application
+        count: 0,
+        token: '',
+        isConnected: false
+    },
+    actions: {
+        // fonctions asynchrones qui appellent les mutations
     },
     mutations: {
-        increment (state) {
+        increment(state) {
             state.count++
+        },
+        saveToken(state, token) {
+            state.token = token
+        },
+        deleteToken(state) {
+            localStorage.removeItem(state.token)
+        },
+        setIsConnected(state, value){
+            state.isConnected = value
         }
+    },
+    getters: {
+        // fonctions qui récupèrent des données de l'état de l'application
+        getToken: state => state.token,
+        getIsConnected: state => state.isConnected
     }
 })
 
-// const app = createApp({ /* your root component */ })
 createApp(App).use(store).use(router).mount('#app')
 
 

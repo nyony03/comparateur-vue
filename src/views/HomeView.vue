@@ -1,9 +1,9 @@
 <template>
   <div class="home">
     <div id="app">
-        <ProductView />
-      </div>
+      <ProductView/>
     </div>
+  </div>
 </template>
 
 <script>

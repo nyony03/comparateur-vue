@@ -7,8 +7,10 @@
      />
       <router-link class="li" to="/">Home</router-link> |
       <router-link class="li" to="/about">Comparer des jeux</router-link> |
-      <router-link class="li" to="/auth">Se connecter</router-link> |
-      <router-link class="li" to="/about">S'inscrire</router-link>
+      <router-link v-if="isConnected" class="li" to="/about">Mon profil</router-link>
+      <router-link v-if="!isConnected" class="li" to="/auth">Se connecter</router-link> |
+      <router-link v-if="!isConnected" class="li" to="/about">S'inscrire</router-link>
+      <router-link v-if="isConnected" @click="logout" class="li" to="">Deconnexion</router-link>
       <SearchBar/>
     </div>
     <div>
@@ -21,6 +23,7 @@
 
 <script>
 import SearchBar from "@/components/SearchBar.vue";
+import {mapState} from "vuex";
 
 export default {
   name: "NavBarView",
@@ -30,9 +33,16 @@ export default {
       query: ''
     };
   },
+  computed: {
+    ...mapState(['isConnected'])
+  },
   methods: {
     search() {
       console.log(`Recherche pour: ${this.query}`);
+    },
+    logout(){
+      this.$store.commit('setIsConnected', false);
+      this.$store.commit('deleteToken');
     }
   }
 }
