@@ -1,6 +1,7 @@
 <template>
   <div>
-    <button v-if="isConnected" class="neon-button">Créer un jeu</button>
+    <button v-if="isConnected" @click="showModal = true" class="neon-button">Créer un jeu</button>
+    <ModalVue :is-open="showModal" @close-modal="showModal = false" />
     <div class="card" v-for="item in items" :key="item._id">
       <router-link
           class="routerlink"
@@ -23,10 +24,12 @@
 import card from "@/components/Card.vue";
 import api from "@/script/helper/api"
 import {mapState} from "vuex";
+import ModalVue from "@/components/Modal.vue";
 
 export default {
   name: "product-vue",
   components: {
+    ModalVue,
     card
   },
   computed: {
@@ -34,7 +37,8 @@ export default {
   },
   data(){
     return {
-      items: []
+      items: [],
+      showModal : false
     }
   },
   async mounted() {
@@ -57,7 +61,7 @@ export default {
 .neon-button {
   background-color: #ab5f5f;
   color: #fff;
-  font-size: 16px;
+  font-size: 1em;
   border: none;
   padding: 12px 24px;
   border-radius: 30px;

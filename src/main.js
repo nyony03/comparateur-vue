@@ -9,7 +9,9 @@ const store = createStore({
         // état initial de l'application
         count: 0,
         token: '',
-        isConnected: false
+        isConnected: false,
+        message: '',
+        error: false
     },
     actions: {
         // fonctions asynchrones qui appellent les mutations
@@ -26,12 +28,19 @@ const store = createStore({
         },
         setIsConnected(state, value){
             state.isConnected = value
+        },
+        setErrorSuccessMessage(state, value){
+            state.message = value
+        },
+        setError(state, value){
+            state.error = value
         }
     },
     getters: {
         // fonctions qui récupèrent des données de l'état de l'application
         getToken: state => state.token,
-        getIsConnected: state => state.isConnected
+        getIsConnected: state => state.isConnected,
+        getErrorSuccessMessage: state => state.message
     }
 })
 

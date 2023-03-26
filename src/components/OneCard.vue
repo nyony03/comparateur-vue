@@ -51,7 +51,7 @@ export default {
 </script>
 <style scoped>
 .card {
-  height: 40rem;
+  height: 50em;
   width: 80%;
   position: relative;
   padding: 20px;
@@ -80,13 +80,12 @@ export default {
 
 .title {
   font-size: 24px;
-  color: black;
   text-align: center;
   font-weight: 700;
   color: #181818;
   text-shadow: 0px 2px 2px #a6f8d5;
   position: relative;
-  margin: 0 0 20px 0;
+  margin: 1em 0 0;
 }
 
 .subtitle {

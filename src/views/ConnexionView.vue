@@ -42,17 +42,14 @@ export default {
       this.authentification(this.user)
           .then(token => {
             console.log('token',token);
-            // faire quelque chose avec le token, comme rediriger l'utilisateur vers une autre page
-            // Stockez le token dans Vuex avec une mutation
             this.$store.commit('saveToken', token);
             console.log("ici ", this.$store.getters.getToken);
             this.$store.commit('setIsConnected', true);
-            // Dirigible l'utilisateur vers la page d'accueil
             router.push('/')
           })
           .catch(error => {
-            console.log(error)
-            // gérer l'erreur, par exemple en affichant un message à l'utilisateur
+              this.$store.commit('setError', true);
+              this.$store.commit('setErrorSuccessMessage', error);
           })
     }
   }
