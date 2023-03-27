@@ -9,7 +9,7 @@
       <router-link class="li" to="/about">Comparer des jeux</router-link> |
       <router-link v-if="isConnected" class="li" to="/about">Mon profil</router-link>
       <router-link v-if="!isConnected" class="li" to="/auth">Se connecter</router-link> |
-      <router-link v-if="!isConnected" class="li" to="/about">S'inscrire</router-link>
+      <router-link v-if="!isConnected" class="li" to="/registration">S'inscrire</router-link>
       <router-link v-if="isConnected" @click="logout" class="li" to="">Deconnexion</router-link>
       <SearchBar/>
     </div>

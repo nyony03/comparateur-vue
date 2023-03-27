@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import GameView from "@/views/GameView.vue";
 import ConnexionView from "@/views/ConnexionView.vue";
+import InscriptionView from "@/views/InscriptionView.vue";
 // import ProductView from '../components/Products.vue'
 
 
@@ -25,6 +26,11 @@ const routes = [
     path: "/auth/login",
     name: "authentification",
     component: ConnexionView
+  },
+  {
+    path: "/registration",
+    name: "inscription",
+    component: InscriptionView
   },
   {
     path: "/compare/:idJ1/:idJ2",

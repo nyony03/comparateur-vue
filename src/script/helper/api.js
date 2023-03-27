@@ -10,6 +10,15 @@ async function oneGame(id){
     return response.data[0]
 }
 
+async function registration(user){
+    return await axios.post('http://localhost:3000/app/user/',{
+        login : user.login,
+        email : user.email,
+        password: user.password,
+        role: 'user'
+    })
+}
+
 async function authentification(user){
     const token = await axios.post('http://localhost:3000/app/login', {
         login : user.login,
@@ -19,7 +28,6 @@ async function authentification(user){
 }
 
 async function createGame(game, token){
-    console.log("tokencreate", token)
     return await axios.post('http://localhost:3000/app/game/', {
         price: game.price,
         name: game.name,
@@ -39,5 +47,6 @@ export default {
     gameList,
     oneGame,
     authentification,
-    createGame
+    createGame,
+    registration
 }
