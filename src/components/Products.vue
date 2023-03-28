@@ -1,11 +1,11 @@
 <template>
   <div>
     <button v-if="isConnected" @click="showModal = true" class="neon-button">Créer un jeu</button>
-    <ModalVue :is-open="showModal" @close-modal="showModal = false" />
     <div class="card" v-for="item in items" :key="item._id">
       <router-link
           class="routerlink"
           :to="{ name: 'GameView', params: { id: item._id } }"
+          v-if="!showModal"
       >
         <card
             :id="item._id"
@@ -13,11 +13,17 @@
             :name="item.name"
             :description="item.description"
             :type="item.type"
+            :item="item"
+            @select-item="selectItem"
         />
       </router-link>
     </div>
+    <ModalVue
+        :is-open="showModal"
+        @close-modal="showModal = false"
+        :selectedItem="selectedItem"
+    />
   </div>
-
 </template>
 
 <script>
@@ -38,18 +44,29 @@ export default {
   data(){
     return {
       items: [],
-      showModal : false
+      showModal : false,
+      selectedItem: null
     }
   },
   async mounted() {
     api.gameList()
-          .then(data => {
-            this.items = data
-          })
-          .catch(error => {
-            console.log(error)
-          })
-  }
+        .then(data => {
+          this.items = data
+        })
+        .catch(error => {
+          console.log(error)
+        })
+  },
+  methods: {
+    selectItem(item) {
+      this.selectedItem = item;
+      this.showModal = true;
+    },
+    openModal() {
+      this.selectedItem = null; // initialiser selectedItem à null
+      this.showModal = true;
+    },
+  },
 }
 </script>
 
@@ -59,9 +76,9 @@ export default {
 }
 
 .neon-button {
-  background-color: #ab5f5f;
+  background-color: #1e7043;
   color: #fff;
-  font-size: 1em;
+  font-size: 1.5em;
   border: none;
   padding: 12px 24px;
   border-radius: 30px;
@@ -71,9 +88,9 @@ export default {
   margin-bottom: 50px;
 }
 .neon-button:hover {
-  background-color: #ab5f5f;
+  background-color: #52b07d;
   color: #ffffff;
-  box-shadow: 0 0 15px #ab5f5f;
+  box-shadow: 0 0 15px #52b07d;
   text-shadow: 0 0 10px;
 }
 
