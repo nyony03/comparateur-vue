@@ -11,10 +11,12 @@
         </p>
         <div class="card" v-for="item in items" :key="item._id">
             <card
+                    :class="{ selected: item.isSelected }"
                     :id="item._id"
                     :url="item.url"
                     :name="item.name"
                     :description="item.description"
+                    :selected="item.isSelected"
                     :type="item.type"
                     :item="item"
                     @select-item="selectItem"
@@ -69,7 +71,11 @@ export default {
         },
         addToSelectedItems(item) {
             if (this.selectedItems.length < 2 && !this.selectedItems.includes(item)) {
+                item.isSelected = true;
                 this.selectedItems.push(item);
+            } else if (this.selectedItems.includes(item)) {
+                item.isSelected = false;
+                this.selectedItems.splice(this.selectedItems.indexOf(item), 1);
             }
         },
         openModal() {

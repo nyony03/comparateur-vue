@@ -1,6 +1,6 @@
 <template>
   <div class="Card">
-    <div class="Card-content">
+    <div class="Card-content" :class="{selected: selected}">
       <div class="card-left">
         <EventCard v-if="hasMessage" :error-message="errorMessage" :success-message="successMessage"/>
         <div>
@@ -46,7 +46,8 @@ export default {
     description: String,
     type: String,
     item: {},
-    canBeSelected: Boolean
+    canBeSelected: Boolean,
+    selected: Boolean
   },
   data(){
     return {
@@ -167,5 +168,10 @@ button {
   height: 20px;
 }
 
+.selected {
+    background-color: #ab5f5f;
+    color: #ffffff;
+    transition: none;
+}
 
 </style>
