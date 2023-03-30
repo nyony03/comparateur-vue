@@ -32,7 +32,6 @@ export default {
   components:{
     EventCard,
     ModalVue
-    // CheckBox
   },
   computed: {
     ...mapState(['isConnected']),
@@ -46,13 +45,14 @@ export default {
     name: String,
     description: String,
     type: String,
-    item: {}
+    item: {},
+    canBeSelected: Boolean
   },
   data(){
     return {
       showModal : false,
       errorMessage: '',
-      successMessage: '',
+      successMessage: ''
     }
   },
   methods: {

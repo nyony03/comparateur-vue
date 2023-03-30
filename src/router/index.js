@@ -3,6 +3,9 @@ import HomeView from '../views/HomeView.vue'
 import GameView from "@/views/GameView.vue";
 import ConnexionView from "@/views/ConnexionView.vue";
 import InscriptionView from "@/views/InscriptionView.vue";
+import ProductViewCompare from "@/views/CompareView.vue";
+import CompareViewPage from "@/views/CompareViewPage.vue";
+
 // import ProductView from '../components/Products.vue'
 
 
@@ -33,9 +36,14 @@ const routes = [
     component: InscriptionView
   },
   {
-    path: "/compare/:idJ1/:idJ2",
+    path: "/compare",
     name: "compare",
-    component: 'ici'
+    component: ProductViewCompare
+  },
+  {
+    path: "/compare/:idJ1/:idJ2",
+    name: "compareId",
+    component: CompareViewPage
   }
 ]
 

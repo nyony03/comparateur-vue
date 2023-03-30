@@ -25,6 +25,7 @@
               <option value="aventure">Aventure</option>
               <option value="romantique">Romantique</option>
               <option value="action">Action</option>
+              <option value="combat">Combat</option>
             </select>
 
             <label for="platform">Plateforme:</label>

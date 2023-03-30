@@ -6,7 +6,7 @@
              style="width: 5%"
      />
       <router-link class="li" to="/">Home</router-link> |
-      <router-link class="li" to="/about">Comparer des jeux</router-link> |
+      <router-link class="li" to="/compare">Comparer des jeux</router-link> |
       <router-link v-if="isConnected" class="li" to="/about">Mon profil</router-link>
       <router-link v-if="!isConnected" class="li" to="/auth">Se connecter</router-link> |
       <router-link v-if="!isConnected" class="li" to="/registration">S'inscrire</router-link>

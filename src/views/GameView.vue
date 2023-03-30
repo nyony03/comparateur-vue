@@ -16,7 +16,6 @@ export default {
     }
   },
   async mounted(){
-    console.log(this.jeu)
     api.oneGame(this.$route.params.id)
         .then(data => {
           this.jeu = data
