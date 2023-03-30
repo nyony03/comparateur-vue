@@ -1,32 +1,37 @@
 <template>
+    <!-- s'affiche pour chaque jeu dans la page d'acceuille ave l'api-->
     <div class="Card">
+        <!-- Checkbox pour sélectionner/désélectionner le jeu -->
         <div class="select">
             <label class="container">
                 <input
-                        class="buttonCheck"
-                        type="checkbox"
-                        :id="id"
-                        :value="id"
-                        v-on:click="affiche"
-                        :disabled="!canBeSelected"
+                    class="buttonCheck"
+                    type="checkbox"
+                    :id="id"
+                    :value="id"
+                    v-on:click="affiche"
+                    :disabled="!canBeSelected"
                 />
                 <span class="checkmark"></span>
             </label>
         </div>
 
+        <!-- Lien pour accéder à la page de détails du jeu -->
         <router-link
-                class="routerlink"
-                :to="{ name: 'ProductView', params: { id: id } }"
+            class="routerlink"
+            :to="{ name: 'ProductView', params: { id: id } }"
         >
             <div class="gauche">
                 <h1>{{ titre }}</h1>
                 <p class="tag">{{ prix }}€</p>
                 <div class="description">
+                    <!-- Affichage de la description du jeu -->
                     <p class="descriptionCute">{{ description }}</p>
                     <p class="troisPoints">...</p>
                 </div>
             </div>
             <div class="droite">
+                <!-- Affichage de l'image du jeu -->
                 <img class="image" :src="img" />
             </div>
         </router-link>
@@ -48,7 +53,7 @@ export default {
 
     methods: {
         affiche: function (event) {
-            // `this` inside methods point to the Vue instance
+            // Événement pour signaler la sélection du jeu
             this.$emit("selected", this.id);
         },
     },
@@ -67,7 +72,7 @@ export default {
     position: relative;
     max-height: 39px;
     overflow: hidden;
-    padding-right: 1rem; /* space for ellipsis */
+    padding-right: 1rem; /* espace pour les points de suspension */
     margin-bottom: 0;
 }
 

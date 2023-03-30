@@ -3,8 +3,8 @@
         <router-link :to="{ name: 'ProductsView' }">
             <button class="buttonRetour">
                 <img
-                        class="ImageButtonRetour"
-                        src="https://cdn-icons-png.flaticon.com/512/61/61449.png"
+                    class="ImageButtonRetour"
+                    src="https://cdn-icons-png.flaticon.com/512/61/61449.png"
                 />
             </button>
         </router-link>
@@ -21,22 +21,22 @@
             </div>
             <div class="prix">
                 <h1
-                        class="prix"
-                        :class="{ 'prix--lowCost': Jeu1.id === prixLeMoinsCher }"
+                    class="prix"
+                    :class="{ 'prix--lowCost': Jeu1.id === prixLeMoinsCher }"
                 >
                     {{ Jeu1.prix }}€
                 </h1>
                 <h1
-                        class="prix"
-                        :class="{ 'prix--lowCost': Jeu2.id === prixLeMoinsCher }"
+                    class="prix"
+                    :class="{ 'prix--lowCost': Jeu2.id === prixLeMoinsCher }"
                 >
                     {{ Jeu2.prix }}€
                 </h1>
             </div>
             <div class="note">
                 <h1
-                        class="note"
-                        :class="{
+                    class="note"
+                    :class="{
             'note--lowCost': Jeu1.id === noteLaPlusBas,
             'note--egale': Aucun === noteLaPlusBas,
           }"
@@ -44,8 +44,8 @@
                     {{ Jeu1.note }}/20
                 </h1>
                 <h1
-                        class="note"
-                        :class="{
+                    class="note"
+                    :class="{
             'note--lowCost': Jeu2.id === noteLaPlusBas,
             'note--egale': Aucun === noteLaPlusBas,
           }"
