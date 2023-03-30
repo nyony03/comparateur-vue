@@ -8,7 +8,7 @@ const store = createStore({
     state: {
         // état initial de l'application
         count: 0,
-        token: '',
+        token: localStorage.getItem('token') || '',
         isConnected: false,
         message: '',
         error: false
@@ -22,9 +22,10 @@ const store = createStore({
         },
         saveToken(state, token) {
             state.token = token
+            localStorage.setItem('token', token)
         },
-        deleteToken(state) {
-            localStorage.removeItem(state.token)
+        deleteToken() {
+            localStorage.removeItem('token')
         },
         setIsConnected(state, value){
             state.isConnected = value

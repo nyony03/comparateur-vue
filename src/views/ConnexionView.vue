@@ -8,7 +8,6 @@
       <form class="form" action="/auth/login" @submit.prevent="submitForm">
         <input type="login" v-model="user.login" class="form-field animation a3" placeholder="login">
         <input type="password" v-model="user.password" class="form-field animation a4" placeholder="Mot de passe">
-        <p class="animation a5"><a href="#">Mot de passe oublié</a></p>
         <button class="animation a6" type="submit">SE CONNECTER</button>
       </form>
     </div>

@@ -3,7 +3,7 @@
     <EventCard v-if="hasMessage" :error-message="errorMessage" :success-message="successMessage" />
     <form action="#" @submit.prevent="submit" method="post">
       <h1>Welcome</h1>
-      <h4>Pour s'incrire, veuillez utilisez un login, un email et un mot de passe</h4>
+      <h4>Pour s'inscrire, veuillez utilisez un login, un email et un mot de passe</h4>
       <label for="login">Login :</label>
       <input type="text" v-model="user.login" id="login" name="login" required>
       <label for="email">E-mail :</label>

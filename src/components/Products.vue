@@ -23,7 +23,7 @@
         @close-modal="showModal = false"
         :selectedItem="selectedItem"
     />
-  </div>
+  </div>pr
 </template>
 
 <script>

@@ -5,17 +5,6 @@
       <div class="footer-left">
 
         <h3>Comparateur de Jeux</h3>
-
-        <p class="footer-links">
-          <a href="#" class="link-1">Home</a>
-
-          <a href="#">Comparateur de jeux</a>
-
-          <a href="#">Se connecter</a>
-
-          <a href="#">S'inscrire</a>
-        </p>
-
         <p class="footer-company-name">© Ny Ony R. & Cécile B.</p>
       </div>
 
@@ -28,7 +17,7 @@
 
         <div>
           <i class="fa fa-envelope"></i>
-          <p><a href="mailto:support@company.com">support@company.com</a></p>
+          <p><a href="mailto:support@company.com">comparateur-jeux@company.com</a></p>
         </div>
 
       </div>
@@ -37,18 +26,10 @@
 
         <p class="footer-company-about">
           <span>Comparateur de jeu</span>
-          Comparateur de jeu est un projet en node et vue js qui conciste à construire un comparateur des produits.
-          Nous avons pour cela, décider d'accès notre projet sur une comparateur de jeuw.
+          Comparateur de jeu est un projet en node et vue js qui consiste à construire un comparateur des produits.
+          Nous avons pour cela, décider d'accès notre projet sur une comparateur de jeux vidéos.
         </p>
 
-        <div class="footer-icons">
-
-          <a href="#"><i class="fa fa-facebook"></i></a>
-          <a href="#"><i class="fa fa-twitter"></i></a>
-          <a href="#"><i class="fa fa-linkedin"></i></a>
-          <a href="#"><i class="fa fa-github"></i></a>
-
-        </div>
 
       </div>
 
@@ -123,7 +104,7 @@ export default {
 
 .footer-distributed .footer-company-name{
   color:  #ffffff;
-  font-size: 14px;
+  font-size: x-large;
   font-weight: normal;
   margin: 0;
 }
@@ -145,11 +126,6 @@ export default {
   line-height: 42px;
   margin: 10px 15px;
   vertical-align: middle;
-}
-
-.footer-distributed .footer-center i.fa-envelope{
-  font-size: 17px;
-  line-height: 38px;
 }
 
 .footer-distributed .footer-center p{
@@ -194,8 +170,8 @@ export default {
 
 .footer-distributed .footer-company-about{
   line-height: 20px;
-  color:  #92999f;
-  font-size: 13px;
+  color: #ffffff;
+  font-size: 17px;
   font-weight: normal;
   margin: 0;
 }
