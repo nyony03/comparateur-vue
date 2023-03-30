@@ -1,6 +1,8 @@
+// liste des jeux en ligne
+
 const liste = [
     {
-        id: 1,
+        id: "1",
         titre: "Hollow Knight",
         prix: 10,
         note: 12,
@@ -14,10 +16,10 @@ const liste = [
     },
 
     {
-        id: 2,
+        id: "2",
         titre: "Ori and the Will of the Wisps",
-        prix: 10,
-        note: 12,
+        prix: 55,
+        note: 15,
         tag: "combat",
         description:
             "Embarquez pour une nouvelle aventure dans un monde vaste et dépaysant où vous rencontrerez des ennemis gigantesques et des énigmes ardues dans votre quête pour révéler la destinée d'Ori. ",
@@ -28,9 +30,9 @@ const liste = [
     },
 
     {
-        id: 3,
+        id: "3",
         titre: "Marvel’s Spider-Man Remastered",
-        prix: 10,
+        prix: 60,
         note: 12,
         tag: "combat",
         description:
@@ -42,9 +44,9 @@ const liste = [
     },
 
     {
-        id: 4,
+        id: "4",
         titre: "Gotham Knights",
-        prix: 10,
+        prix: 36,
         note: 12,
         tag: "combat",
         description:
@@ -56,9 +58,9 @@ const liste = [
     },
 
     {
-        id: 5,
+        id: "5",
         titre: "Hogwarts Legacy : L'Héritage de Poudlard",
-        prix: 10,
+        prix: 60,
         note: 12,
         tag: "combat",
         description:
@@ -70,9 +72,9 @@ const liste = [
     },
 
     {
-        id: 6,
+        id: "6",
         titre: "The Witcher® 3: Wild Hunt",
-        prix: 10,
+        prix: 40,
         note: 12,
         tag: "combat",
         description:
@@ -84,10 +86,12 @@ const liste = [
     }
 ];
 
+//fonction get pour récuperer l'integralité de la liste
 function getList() {
     return liste;
 }
 
+// fonction pour recuperer un jeu avec son id
 function getJeu(id) {
     let Jeu = {};
     console.log(id);

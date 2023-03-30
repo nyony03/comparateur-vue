@@ -3,6 +3,7 @@ import Router from "vue-router";
 import ProductsView from "../components/ProductsView";
 import ProductView from "../components/ProductView";
 import compare from "../components/compare";
+import FromModifInfoGame from "../components/FromModifInfoGame";
 
 Vue.use(Router);
 
@@ -17,6 +18,11 @@ export default new Router({
             path: "/product/:id",
             name: "ProductView",
             component: ProductView
+        },
+        {
+            path: "/product/:id/modif",
+            name: "FromModifInfoGame",
+            component: FromModifInfoGame
         },
         {
             path: "/compare/:idJ1/:idJ2",
