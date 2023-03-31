@@ -34,13 +34,10 @@ npm run lint
 -[x] Ajouter une route inscription
 -[x] Si l’utilisateur est connecté (et seulment dans ce cas) : Ajouter sur la vue de la liste produit un
  bouton “nouveau” qui affichera un formulaire pour créer un nouveau produit.
-- [x] Puis ajouter un bouton “Supprimer” sur chaque produit afin de supprimer celui-ci. Attention
-  le client ne doit pas recharger sa page. (il devra mettre à jour sa liste de produit si la supression s’est
-  bien passée)
-- [x] Enfin ajouter un bouton “Editer” pour modifier le produit sélectionné. Attention le formulaire
-  d’ajout et d’édition doit être le même composant.
+- [x] Ajouter un bouton “Supprimer” sur chaque produit afin de supprimer celui-ci. 
+- [x] Ajouter un bouton “Editer” pour modifier le produit sélectionné. 
 - [x] Créer un composant capable de recevoir une sélection de produits via EventBus et de
-  rediriger vers la page de comparaison. Utiliser ce composant sur toutes vos pages.
+  rediriger vers la page de comparaison
 
 ## Projet conçu par:
 Ny Ony Rakotondramonja
