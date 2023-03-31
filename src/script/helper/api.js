@@ -68,6 +68,11 @@ async function deleteGame(id, token) {
         })
 }
 
+async function getUserByLogin(login){
+    const user = await axios.get('http://localhost:3000/app/user/' + login)
+    return user.data[0]
+}
+
 export default {
     gameList,
     oneGame,
@@ -75,5 +80,6 @@ export default {
     createGame,
     registration,
     update,
-    deleteGame
+    deleteGame,
+    getUserByLogin
 }

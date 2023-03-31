@@ -40,17 +40,24 @@ export default {
     submitForm() {
       this.authentification(this.user)
           .then(token => {
-            console.log('token',token);
             this.$store.commit('saveToken', token);
-            console.log("ici ", this.$store.getters.getToken);
             this.$store.commit('setIsConnected', true);
-            router.push('/')
+            this.getUserId().then(() => {
+                router.push('/')
+            })
           })
           .catch(error => {
               this.$store.commit('setError', true);
               this.$store.commit('setErrorSuccessMessage', error);
           })
-    }
+    },
+      async getUserId(){
+        await api.getUserByLogin(this.user.login).then((user) => {
+            this.$store.commit('setUser', user);
+            this.$store.commit('setId', user._id);
+            console.log(this.$store.getters.getUser)
+        })
+      }
   }
 }
 </script>

@@ -5,6 +5,7 @@ import ConnexionView from "@/views/ConnexionView.vue";
 import InscriptionView from "@/views/InscriptionView.vue";
 import ProductViewCompare from "@/views/CompareView.vue";
 import CompareViewPage from "@/views/CompareViewPage.vue";
+import UserView from "@/views/UserView.vue";
 
 // import ProductView from '../components/Products.vue'
 
@@ -44,7 +45,12 @@ const routes = [
     path: "/compare/:idJ1/:idJ2",
     name: "compareId",
     component: CompareViewPage
-  }
+  },
+  {
+    path: "/profil",
+    name: "user",
+    component: UserView
+  },
 ]
 
 const router = createRouter({

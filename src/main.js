@@ -11,7 +11,9 @@ const store = createStore({
         token: localStorage.getItem('token') || '',
         isConnected: false,
         message: '',
-        error: false
+        error: false,
+        id: '',
+        user: ''
     },
     actions: {
         // fonctions asynchrones qui appellent les mutations
@@ -35,13 +37,24 @@ const store = createStore({
         },
         setError(state, value){
             state.error = value
-        }
+        },
+        setId(state, value){
+            state.id = value
+        },
+        setUser(state, value){
+            state.user = value
+        },
+        deleteUser(state) {
+            state.user = ""
+        },
     },
     getters: {
         // fonctions qui récupèrent des données de l'état de l'application
         getToken: state => state.token,
         getIsConnected: state => state.isConnected,
-        getErrorSuccessMessage: state => state.message
+        getErrorSuccessMessage: state => state.message,
+        getId: state => state.id,
+        getUser: state => state.user
     }
 })
 
