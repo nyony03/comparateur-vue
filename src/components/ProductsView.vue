@@ -2,6 +2,13 @@
 <template>
     <div>
         <h1>Producs View</h1>
+        <router-link class="routerlink" :to="{ name: 'user', params: { id: id } }">
+            <!-- Bouton de retour qui renvoie à la page de la liste des jeux -->
+            <button class="user-btn">
+                <h1>Utilisateur</h1>
+            </button>
+        </router-link>
+
         <!-- Affichage des jeux à l'aide du composant Jeux -->
         <Jeux :list="liste"></Jeux>
     </div>
@@ -14,7 +21,9 @@ import api from "./api";
 import Jeux from "./Jeux";
 export default {
     // Nom du composant
-    name: "Card",
+    //name: "Card",
+
+    name: "user",
     // Composants utilisés dans ce composant
     components: {
         Jeux,
@@ -22,6 +31,7 @@ export default {
     // Données de ce composant
     data() {
         return {
+            id: "63e91ed1aa8607500004d004",
             liste: [],
         };
     },
@@ -33,6 +43,21 @@ export default {
 </script>
 
 <style scoped>
+.center {
+    margin: 0 auto;
+}
+
+.profile {
+    width: 50%;
+    margin: 50px auto;
+}
+
+.user-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 999;
+}
 /* style des balise Card */
 .Card {
     column-count: 3;

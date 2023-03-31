@@ -4,6 +4,8 @@ import ProductsView from "../components/ProductsView";
 import ProductView from "../components/ProductView";
 import compare from "../components/compare";
 import FromModifInfoGame from "../components/FromModifInfoGame";
+import user from "../components/user";
+import edit from "../components/edit";
 
 Vue.use(Router);
 
@@ -28,6 +30,16 @@ export default new Router({
             path: "/compare/:idJ1/:idJ2",
             name: "compare",
             component: compare
+        },
+        {
+            path: "/profile/:id",
+            name: "user",
+            component: user
+        },
+        {
+            path: "/edit/:id/:param",
+            name: "edit",
+            component: edit
         }
     ]
 });
